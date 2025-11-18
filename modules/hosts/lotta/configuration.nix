@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos."nixosConfiguratoins/lotta" =
+  flake.modules.nixos."nixosConfigurations/lotta" =
     { config, ... }:
     {
       networking.hostName = "lotta";

@@ -37,7 +37,7 @@ in
     flake.nixosConfigurations =
       let
         mkHost =
-          hostname: options:
+          hostName: options:
           let
             nixpkgs' = if options.unstable then inputs.nixpkgs else inputs.nixpkgs-stable;
           in
@@ -46,7 +46,7 @@ in
             specialArgs.inputs = inputs;
             modules = [
               config.flake.modules.nixos.core
-              (config.flake.modules.nixos."nixosConfigurations/${hostname}" or { })
+              (config.flake.modules.nixos."nixosConfigurations/${hostName}" or { })
             ];
           };
       in
