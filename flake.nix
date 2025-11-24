@@ -25,31 +25,4 @@
     inputs@{ flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
-  #  outputs = { self, nixpkgs, nvf, wrappers, ...}:
-  #  let
-  #    pkgs = nixpkgs.legacyPackages.x86_64-linux;
-  #  in
-  #  {
-  #    packages."x86_64-linux".nvim =
-  #      (nvf.lib.neovimConfiguration {
-  #        inherit pkgs;
-  #        modules = [ ./nvf-configuration.nix ];
-  #      }).neovim;
-  #
-  #    packages."x86_64-linux".niri = (
-  #        wrappers.wrapperModules.niri.apply
-  #          {
-  #             inherit pkgs;
-  #             "config.kdl".content = "";
-  #          }
-  #        ).wrapper;
-  #
-  #
-  #    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-  #      modules = [
-  #        ./configuration.nix
-  # nvf.nixosModules.default
-  #      ];
-  #    };
-  #  };
 }

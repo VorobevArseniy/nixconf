@@ -3,6 +3,8 @@
     users = {
       mutableUsers = false;
 
+      allowNoPasswordLogin = true;
+
       users = {
         root = {
           isSystemUser = true;

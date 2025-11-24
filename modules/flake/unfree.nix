@@ -2,17 +2,18 @@
 {
   options.nixpkgs.allowedUnfreePackages = lib.mkOption {
     type = lib.types.listOf lib.types.str;
-    default = [ ];
+    default = [  ];
   };
 
   config = {
     flake = {
       modules =
-        let
-          predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
-        in
+        # let
+          # predicate = pkg: builtins.elem (lib.getName pkg) config.nixpkgs.allowedUnfreePackages;
+        # in
         {
-          nixos.core.nixpkgs.config.allowUnfreePredicate = predicate;
+          # nixos.core.nixpkgs.config.allowUnfreePredicate = predicate;
+          nixos.core.nixpkgs.config.allowUnfree = true;
 
           # homeManager.core = args: {
           #   nixpkgs.config = lib.mkIf (!(args.hasGlobalPkgs or false)) {
@@ -21,7 +22,7 @@
           # };
         };
 
-      unfree = config.nixpkgs.allowedUnfreePackages;
+      # unfree = config.nixpkgs.allowedUnfreePackages;
     };
   };
 }
