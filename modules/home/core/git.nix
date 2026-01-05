@@ -10,13 +10,13 @@
           name = "VorobevArseniy";
           email = "dr.venitus@gmail.com";
           # signingKey = "/run/agenix/ssh-github";
-          signingKey = "/home/master/.ssh/id_ed25519.pub";
+          signingKey = "/home/master/.ssh/id_ed25519";
         };
 
         init.defaultBranch = "master";
 
         # core.sshCommand = "ssh -i /run/agenix/ssh-github";
-        core.sshCommand = "ssh -i /home/master/.ssh/id_ed25519.pub";
+        core.sshCommand = "ssh -i /home/master/.ssh/id_ed25519";
 
         commit.gpgSign = true;
         tag.gpgSign = true;
