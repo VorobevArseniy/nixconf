@@ -9,7 +9,7 @@
       programs.nh = {
         enable = true;
 
-        flake = lib.mkDefault "${config.home.homeDirectory}/nix/master";
+        flake = lib.mkDefault "${config.home.homeDirectory}/nixconf";
 
         clean = {
           enable = true;

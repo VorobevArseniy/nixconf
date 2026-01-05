@@ -4,7 +4,7 @@
     unstable = true;
   };
   flake.modules.nixos."nixosConfigurations/lotta".imports = with inputs.self.modules.nixos; [
-    nvidia
+    # nvidia
 
     grub
     efi

@@ -27,24 +27,19 @@
       boot.extraModulePackages = [ config.boot.kernelPackages.rtl8821au ];
 
       hardware.enableRedistributableFirmware = true;
-
       fileSystems."/" = {
-        device = "/dev/disk/by-uuid/8ee3d764-f15f-43cd-92e0-813079979b4a";
+        device = "/dev/disk/by-uuid/f0917133-68fa-4139-aaa4-cd39f06c20de";
         fsType = "ext4";
       };
 
       fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/C133-F662";
+        device = "/dev/disk/by-uuid/F411-976A";
         fsType = "vfat";
         options = [
           "fmask=0077"
           "dmask=0077"
         ];
       };
-
-      swapDevices = [
-        { device = "/dev/disk/by-uuid/e3d69d43-d683-4a4c-8485-6b0b179dc56f"; }
-      ];
 
       # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
       # (the default) this is the recommended approach. When using systemd-networkd it's

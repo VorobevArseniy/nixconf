@@ -3,6 +3,7 @@ topLevel: {
     { config, ... }:
     {
       imports = with topLevel.config.flake.modules.nixos; [
+        substituters
         home-manager
       ];
 

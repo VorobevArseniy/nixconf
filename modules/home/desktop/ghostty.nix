@@ -13,8 +13,9 @@
           mouse-hide-while-typing = true;
           confirm-close-surface = false;
           working-directory = "home";
-          window-inherit-working-directory = false;
+          window-inherit-working-directory = true;
 
+          theme = "Nordfox";
         };
       };
     };

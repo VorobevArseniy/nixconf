@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.network =
+  flake.modules.nixos.network-manager =
     { config, lib, ... }:
     let
       inherit (lib)

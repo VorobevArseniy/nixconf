@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.desktop =
-    { pkgs, ... }:
+    { pkgs, inputs, ... }:
     {
       environment.systemPackages = with pkgs; [
         # Multimedia
@@ -9,6 +9,12 @@
         gthumb
         imagemagick
         vlc
+
+        tuigreet
+        kanata
+
+        lazygit
       ];
+
     };
 }
