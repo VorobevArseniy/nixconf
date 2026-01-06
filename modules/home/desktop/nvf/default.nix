@@ -30,15 +30,15 @@
           lsp = {
             enable = true;
             formatOnSave = true;
+
+            inlayHints.enable = true;
             lspkind.enable = true;
 
             mappings = {
               codeAction = "<leader>ca";
             };
 
-            servers = {
-              nixd.settings.nil.nix.autoArchive = true;
-            };
+            servers.nixd.settings.nil.nix.autoArchive = true;
           };
 
           diagnostics = {
@@ -59,7 +59,11 @@
 
             setupOpts = {
               keymap.preset = "default";
-              cmdline.keymap.preset = "default";
+
+              cmdline = {
+                keymap.preset = "enter";
+              };
+              signature.enabled = true;
             };
           };
 
@@ -67,6 +71,8 @@
 
           utility = {
             motion.flash-nvim.enable = true;
+
+            nix-develop.enable = true;
 
             oil-nvim = {
               enable = true;
@@ -93,6 +99,8 @@
               enable = true;
               mappings.open = "<leader>lg";
             };
+
+            setupOpts.size = 30;
           };
 
           theme = {
@@ -231,6 +239,12 @@
               action = ":vsplit<CR>";
             }
 
+            # Toggle term
+            {
+              key = "<esc>";
+              mode = [ "t" ];
+              action = "<C-\\><C-n>";
+            }
           ];
         };
       };
