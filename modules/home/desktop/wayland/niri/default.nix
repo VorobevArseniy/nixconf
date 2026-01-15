@@ -80,11 +80,16 @@
             transform.rotation = 90;
           };
         };
+
+        screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
+
         binds = with config.lib.niri.actions; {
           "Mod+D".action.spawn = "fuzzel";
           "Mod+T".action.spawn = "ghostty";
+          "Mod+B".action.spawn = "zen";
 
           "Mod+Shift+E".action = quit;
+          "Mod+Shift+P".action = power-off-monitors;
 
           "Mod+Q".action = close-window;
           "Mod+R".action = switch-preset-column-width;
@@ -110,6 +115,18 @@
           "Mod+Ctrl+K".action = move-column-to-workspace-up;
           "Mod+Shift+J".action = move-workspace-down;
           "Mod+Shift+K".action = move-workspace-up;
+
+          "Mod+Comma".action = consume-window-into-column;
+          "Mod+Period".action = expel-window-from-column;
+
+          "Mod+Minus".action = set-column-width "-10%";
+          "Mod+Equal".action = set-column-width "+10%";
+          "Mod+Shift+Minus".action = set-window-height "-10%";
+          "Mod+Shift+Equal".action = set-window-height "+10%";
+
+          "Mod+Shift+S".action.screenshot = [ ];
+          "Print".action.screenshot-screen = [ ];
+          "Mod+Print".action.screenshot-window = [ ];
         };
       };
     };

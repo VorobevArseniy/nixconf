@@ -1,12 +1,24 @@
 topLevel: {
   flake.modules.nixos.dev =
-    { config, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
     {
       imports = with topLevel.config.flake.modules.nixos; [
         substituters
         home-manager
       ];
 
+      # Languages
+      environment.systemPackages = lib.attrValues {
+        inherit (pkgs)
+          go
+          rustc
+          ;
+      };
       # Enable nix-ld for easier uv use
       programs.nix-ld.enable = true;
 

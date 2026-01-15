@@ -100,7 +100,7 @@
               mappings.open = "<leader>lg";
             };
 
-            setupOpts.size = 30;
+            setupOpts.size = 25;
           };
 
           theme = {
