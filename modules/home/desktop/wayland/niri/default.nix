@@ -29,6 +29,8 @@
             bottom = 0;
           };
 
+          focus-ring.active.color = "#88bfd0";
+
           border.width = 2;
           always-center-single-column = true;
           empty-workspace-above-first = true;
@@ -66,13 +68,13 @@
         ];
 
         outputs = {
-          "DP-3" = {
+          "DP-4" = {
             mode.width = 2560;
             mode.height = 1440;
             position.x = 0;
             position.y = 0;
           };
-          "DP-4" = {
+          "DP-3" = {
             mode.width = 1440;
             mode.height = 2560;
             position.x = 2560;

@@ -14,6 +14,8 @@
             cursorlineopt = "screenline";
             cursorline = true;
 
+            scrolloff = 20;
+
             splitright = true;
             splitbelow = true;
           };
@@ -91,16 +93,6 @@
 
           navigation = {
             harpoon.enable = true;
-          };
-
-          terminal.toggleterm = {
-            enable = true;
-            lazygit = {
-              enable = true;
-              mappings.open = "<leader>lg";
-            };
-
-            setupOpts.size = 25;
           };
 
           theme = {
@@ -241,9 +233,20 @@
 
             # Toggle term
             {
+              key = "<C-t>";
+              mode = [ "n" ];
+              action = ":vsplit<CR> :term <CR> i";
+            }
+            {
               key = "<esc>";
               mode = [ "t" ];
               action = "<C-\\><C-n>";
+            }
+
+            {
+              key = "<leader>lg";
+              mode = [ "n" ];
+              action = ":vsplit<CR> :term lazygit <CR> i";
             }
           ];
         };

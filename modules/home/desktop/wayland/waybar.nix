@@ -34,7 +34,7 @@
               format = "{title}";
               max-length = 35;
               rewrite = {
-                "(^$)" = "nihil";
+                "" = "nihil";
               };
             };
 
@@ -74,7 +74,7 @@
           #network,
           #clock {
             border-radius: 16px;
-            background-color: #5e5e5e;
+            background-color: #39404F;
             padding: 0 16px;
             margin-left: 8px;
             color: white;
@@ -93,7 +93,7 @@
             padding: 0 10px;
 
             border-radius: 16px;
-            background-color: #5e5e5e;
+            background-color: #39404F;
             padding: 0 16px;
             margin-left: 8px;
             color: white;

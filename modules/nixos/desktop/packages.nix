@@ -9,6 +9,7 @@
         gthumb
         imagemagick
         vlc
+        mpv
 
         tuigreet
         kanata
