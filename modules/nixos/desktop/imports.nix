@@ -4,6 +4,7 @@
     inputs.niri.nixosModules.niri
     inputs.zapret-discord-youtube.nixosModules.default
 
+    qmk
     caps2ctrl
     auto-login
     display-manager

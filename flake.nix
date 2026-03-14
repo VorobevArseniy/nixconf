@@ -8,7 +8,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05-small";
-    # determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
 
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
 
@@ -34,10 +33,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #        disko = {
-    #      url = "github:nix-community/disko";
-    #      inputs.nixpkgs.follows = "nixpkgs";
-    #    };
+    # disko = {
+    #   url = "github:nix-community/disko";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     nix.url = "https://flakehub.com/f/DeterminateSystems/nix-src/*";
     niri.url = "github:sodiboo/niri-flake";
 
@@ -47,6 +46,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nixcord.url = "github:FlameFlag/nixcord";
 
     stylix = {
       url = "github:danth/stylix";

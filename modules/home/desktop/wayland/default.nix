@@ -10,7 +10,7 @@
       imports = with config.flake.modules.homeManager; [
         niri
         waybar
-        # fuzzel
+        fuzzel
         # gammastep
         # swaync
         # swayosd
@@ -19,6 +19,8 @@
       services.wpaperd = {
         enable = true;
         settings = {
+          DP-1.path = ./ign_unsplash17.png;
+          DP-2.path = ./ign_unsplash17.png;
           DP-3.path = ./ign_unsplash17.png;
           DP-4.path = ./ign_unsplash17.png;
         };

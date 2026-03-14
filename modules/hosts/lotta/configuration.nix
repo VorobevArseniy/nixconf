@@ -2,6 +2,7 @@
   flake.modules.nixos."nixosConfigurations/lotta" =
     { config, ... }:
     {
+      nixpkgs.config.allowBroken = true;
       networking.hostName = "lotta";
 
       age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLy+1nigP0uXc9sTiAn7rpQPNGCGomWpqWzlxZPSwb8 dr.venitus@gmail.com";

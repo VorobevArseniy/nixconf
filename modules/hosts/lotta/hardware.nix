@@ -24,7 +24,9 @@
       ];
       boot.initrd.kernelModules = [ ];
       boot.kernelModules = [ "kvm-amd" ];
-      boot.extraModulePackages = [ config.boot.kernelPackages.rtl8821au ];
+      # boot.extraModulePackages = [
+      #   config.boot.kernelPackages.rtl8821au
+      # ];
 
       hardware.enableRedistributableFirmware = true;
       fileSystems."/" = {

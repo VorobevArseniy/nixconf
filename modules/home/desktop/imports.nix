@@ -2,8 +2,10 @@
 {
   flake.modules.homeManager.desktop.imports = with config.flake.modules.homeManager; [
     inputs.nvf.homeManagerModules.default
+    inputs.nixcord.homeModules.nixcord
 
-    discord
+    media
+    social
     ghostty
     web-browsers
     wayland

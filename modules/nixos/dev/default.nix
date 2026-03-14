@@ -12,11 +12,13 @@ topLevel: {
         home-manager
       ];
 
-      # Languages
+      # Languages and tools
       environment.systemPackages = lib.attrValues {
         inherit (pkgs)
+          gcc
           go
           rustc
+          lazysql
           ;
       };
       # Enable nix-ld for easier uv use

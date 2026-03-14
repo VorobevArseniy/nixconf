@@ -68,13 +68,26 @@
         ];
 
         outputs = {
-          "DP-4" = {
+          "DP-1" = {
+            mode.width = 2560;
+            mode.height = 1440;
+            position.x = 0;
+            position.y = 0;
+          };
+          "DP-2" = {
             mode.width = 2560;
             mode.height = 1440;
             position.x = 0;
             position.y = 0;
           };
           "DP-3" = {
+            mode.width = 1440;
+            mode.height = 2560;
+            position.x = 2560;
+            position.y = -720;
+            transform.rotation = 90;
+          };
+          "DP-4" = {
             mode.width = 1440;
             mode.height = 2560;
             position.x = 2560;
@@ -88,7 +101,7 @@
         binds = with config.lib.niri.actions; {
           "Mod+D".action.spawn = "fuzzel";
           "Mod+T".action.spawn = "ghostty";
-          "Mod+B".action.spawn = "zen";
+          "Mod+B".action.spawn = "qutebrowser";
 
           "Mod+Shift+E".action = quit;
           "Mod+Shift+P".action = power-off-monitors;
@@ -129,6 +142,8 @@
           "Mod+Shift+S".action.screenshot = [ ];
           "Print".action.screenshot-screen = [ ];
           "Mod+Print".action.screenshot-window = [ ];
+
+          "Mod+V".action = toggle-window-floating;
         };
       };
     };

@@ -13,7 +13,7 @@
           mouse-hide-while-typing = true;
           confirm-close-surface = false;
           working-directory = "home";
-          window-inherit-working-directory = true;
+          window-inherit-working-directory = false;
 
           theme = "Nordfox";
         };
