@@ -17,8 +17,6 @@ topLevel: {
         inherit (pkgs)
           gcc
           go
-          rustc
-          lazysql
           ;
       };
       # Enable nix-ld for easier uv use

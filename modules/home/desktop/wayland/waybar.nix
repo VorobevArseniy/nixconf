@@ -16,8 +16,8 @@
             outputs = [
               "DP-3"
             ];
-            height = 30;
-            margin = "10";
+            height = 25;
+            # margin = "10";
 
             modules-left = [
               "niri/window"
@@ -53,9 +53,9 @@
           }
 
           window#waybar {
-            background-color: rgba(0, 0, 0, 0);
+            background-color: #39404F;
             transition-property: background-color;
-            transition-duration: 0.5s;
+            transition-duration: .5s;
           }
 
           button {
@@ -73,37 +73,18 @@
           #wireplumber,
           #network,
           #clock {
-            border-radius: 16px;
             background-color: #39404F;
-            padding: 0 16px;
+            padding: 0 10px;
             margin-left: 8px;
             color: white;
-          }
-
-          #custom-power {
-            background-color: #bf616a
-          }
-
-
-          .modules-right {
-            padding: 0 10px;
           }
 
           .modules-left {
             padding: 0 10px;
-
-            border-radius: 16px;
-            background-color: #39404F;
-            padding: 0 16px;
             margin-left: 8px;
             color: white;
           }
 
-          @keyframes blink {
-            to {
-                color: #000000;
-            }
-          }
 
           label:focus {
             background-color: #000000;

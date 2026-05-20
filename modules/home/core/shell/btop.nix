@@ -10,6 +10,11 @@
   flake.modules.homeManager.desktop =
     { lib, pkgs, ... }:
     {
-      programs.btop.package = lib.mkForce pkgs.btop-rocm;
+      programs.btop = {
+        settings = {
+          color_theme = "nord";
+        };
+        package = lib.mkForce pkgs.btop-rocm;
+      };
     };
 }

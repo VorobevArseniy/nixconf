@@ -25,6 +25,9 @@
         config = {
           profile = "high-quality";
           ytdl-format = "bestvideo+bestaudio";
+
+          vo = "gpu";
+          gpu-context = "x11egl";
         };
       };
     };

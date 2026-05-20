@@ -6,7 +6,8 @@
         enable = true;
         user = "master";
 
-        vesktop.enable = true;
+        discord.equicord.enable = true;
+        discord.vencord.enable = false;
       };
     };
 }

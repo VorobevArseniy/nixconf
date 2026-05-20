@@ -11,6 +11,7 @@
         niri
         waybar
         fuzzel
+        # noctalia
         # gammastep
         # swaync
         # swayosd

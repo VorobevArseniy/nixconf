@@ -20,12 +20,12 @@
         prefer-no-csd = true;
 
         layout = {
-          gaps = 20;
+          gaps = 10;
 
           struts = {
             left = 0;
             right = 0;
-            top = -10;
+            top = 0;
             bottom = 0;
           };
 
@@ -55,7 +55,7 @@
           {
             geometry-corner-radius =
               let
-                r = 8.0;
+                r = 0.0;
               in
               {
                 top-left = r;
@@ -97,6 +97,10 @@
         };
 
         screenshot-path = "~/Pictures/Screenshots/%Y-%m-%dT%H:%M:%S.png";
+
+        spawn-at-startup = [
+          { command = [ "noctalia-shell" ]; }
+        ];
 
         binds = with config.lib.niri.actions; {
           "Mod+D".action.spawn = "fuzzel";
@@ -144,7 +148,10 @@
           "Mod+Print".action.screenshot-window = [ ];
 
           "Mod+V".action = toggle-window-floating;
+
+          "Mod+Space".action = toggle-overview;
         };
+
       };
     };
 }

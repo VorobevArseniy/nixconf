@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.nvf =
-    { lib, ... }:
+    { lib, pkgs, ... }:
     {
       programs.nvf = {
         enable = true;
@@ -18,7 +18,6 @@
               switchbuf = "usetab";
 
               signcolumn = "no";
-              cursorlineopt = "both";
               cursorline = true;
 
               breakindent = true;
@@ -29,26 +28,28 @@
               splitbelow = true;
 
               spelloptions = "camel";
+
+              formatoptions = "rqnl1j";
+              smartcase = true;
+              smartindent = true;
+              virtualedit = "block";
               iskeyword = "@,48-57,_,192-255,-";
             };
 
-            mini = {
-              pick.enable = true;
-              extra.enable = true;
-              pairs.enable = true;
-              ai.enable = true;
-              notify.enable = true;
-              icons.enable = true;
-              git.enable = true;
-              cursorword.enable = true;
-              bufremove.enable = true;
+            ui = {
+              ui2.enable = true;
             };
+
             lsp = {
               enable = true;
               formatOnSave = true;
 
               inlayHints.enable = true;
               lspkind.enable = true;
+
+              presets = {
+                tailwindcss-language-server.enable = true;
+              };
 
               mappings = {
                 codeAction = "<leader>ca";
@@ -58,33 +59,75 @@
               };
             };
 
-            lsp.servers.nil.settings.nil.nix.flake.autoArchive = false;
+            lsp.servers = {
+              nil.settings.nil.nix.flake.autoArchive = false;
+
+              emmet = {
+                enable = true;
+                cmd = [
+                  "${pkgs.emmet-ls}/bin/emmet-ls"
+                  "--stdio"
+                ];
+                filetypes = [
+                  "html"
+                  "css"
+                  "javascript"
+                  "typescript"
+                  "typescriptreact"
+                ];
+              };
+            };
 
             diagnostics = {
               enable = true;
-              config.virtual_lines = true;
+              config.virtual_lines.current_line = true;
             };
 
             languages = {
-
               enableTreesitter = true;
 
               nix.enable = true;
 
               go.enable = true;
 
-              ts.enable = true;
+              yaml.enable = true;
+
+              typescript = {
+                enable = true;
+                # extensions = {
+                #   ts-error-translator.enable = true;
+                # };
+                format = {
+                  enable = true;
+                  type = [ "biome" ];
+                };
+                extraDiagnostics = {
+                  enable = true;
+                  types = [ "biomejs" ];
+                };
+              };
+              html.enable = true;
+              astro = {
+                format.enable = false;
+                format.type = [ "biome" ];
+                enable = true;
+              };
 
               rust.enable = true;
-
-              elixir.enable = true;
 
               typst.enable = true;
 
               lua.enable = true;
 
               clang.enable = true;
+
+              ocaml = {
+                enable = true;
+                format.enable = true;
+              };
             };
+
+            treesitter.autotagHtml = true;
 
             autocomplete.blink-cmp = {
               enable = true;
@@ -100,14 +143,18 @@
               };
             };
 
-            formatter.conform-nvim = {
-              enable = true;
+            formatter.conform-nvim.enable = true;
 
-              setupOpts = {
-                formatters_by_ft = {
-                  tsx = "prettier";
-                };
-              };
+            mini = {
+              pick.enable = true;
+              extra.enable = true;
+              # pairs.enable = true;
+              ai.enable = true;
+              notify.enable = true;
+              icons.enable = true;
+              git.enable = true;
+              cursorword.enable = true;
+              bufremove.enable = true;
             };
 
             utility = {
@@ -129,6 +176,8 @@
                 };
               };
             };
+
+            autopairs.nvim-autopairs.enable = true;
 
             navigation.harpoon.enable = true;
 

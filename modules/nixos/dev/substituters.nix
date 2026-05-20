@@ -3,12 +3,12 @@ let
     {
       url = "https://cache.nixos.org";
       publicKey = "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
-      priority = 2;
+      priority = 1;
     }
     {
       url = "https://nix-cache.ynh.ovh";
       publicKey = "nix-cache.ynh.ovh:9qrjMrCm2hFYIuEgexkBxJTG0/6kT2jqd8muFtUezbk=";
-      priority = 1;
+      priority = 2;
     }
     {
       url = "https://nix-community.cachix.org";
