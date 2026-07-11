@@ -9,10 +9,12 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05-small";
 
+    concord.url = "github:chojs23/concord";
+
     zapret-discord-youtube.url = "github:kartavkun/zapret-discord-youtube";
 
     nvf.url = "github:notashelf/nvf";
-    wrappers.url = "github:lassulus/wrappers";
+    nix-wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -38,7 +40,7 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     nix.url = "https://flakehub.com/f/DeterminateSystems/nix-src/*";
-    niri.url = "github:sodiboo/niri-flake";
+    # niri.url = "github:sodiboo/niri-flake";
 
     import-tree.url = "github:vic/import-tree";
 
@@ -61,6 +63,7 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

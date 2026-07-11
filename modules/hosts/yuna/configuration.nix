@@ -1,17 +1,15 @@
 {
-  flake.modules.nixos."nixosConfigurations/yuna" =
-    { config, ... }:
-    {
-      nixpkgs.config.allowBroken = true;
-      networking.hostName = "lotta";
+  flake.modules.nixos."nixosConfigurations/yuna" = {
+    nixpkgs.config.allowBroken = true;
+    networking.hostName = "lotta";
 
-      age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLy+1nigP0uXc9sTiAn7rpQPNGCGomWpqWzlxZPSwb8 dr.venitus@gmail.com";
+    age.rekey.hostPubkey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPLy+1nigP0uXc9sTiAn7rpQPNGCGomWpqWzlxZPSwb8 dr.venitus@gmail.com";
 
-      boot.loader.timeout = 3;
+    boot.loader.timeout = 3;
 
-      system = {
-        autoUpgrade.enable = false;
-        stateVersion = "25.05";
-      };
+    system = {
+      autoUpgrade.enable = false;
+      stateVersion = "25.05";
     };
+  };
 }

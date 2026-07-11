@@ -1,9 +1,11 @@
+{ inputs, self, ... }:
 {
-  flake.modules.homeManager.fuzzel =
+  perSystem =
     { pkgs, ... }:
     {
-      programs.fuzzel = {
-        enable = true;
+      packages.fuzzel = inputs.nix-wrapper-modules.wrappers.fuzzel.wrap {
+        inherit pkgs;
+
         settings = {
           border.radius = 0;
           colors = {
@@ -20,14 +22,14 @@
             counter = "465780ff";
             border = "465780ff";
           };
-
         };
       };
-      home.packages = [
-        (pkgs.writeShellApplication {
+
+      packages.fuzzel-powermenu = (
+        pkgs.writeShellApplication {
           name = "fuzzel-powermenu";
           runtimeInputs = with pkgs; [
-            fuzzel
+            self.packages.${pkgs.stdenv.hostPlatform.system}.fuzzel
             niri
           ];
           text = ''
@@ -46,7 +48,7 @@
             esac
 
           '';
-        })
-      ];
+        }
+      );
     };
 }

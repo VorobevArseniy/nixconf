@@ -1,6 +1,16 @@
+{ self, ... }:
 {
-  flake.modules.nixos.core = {
-  };
+  flake.modules.nixos.core =
+    { pkgs, ... }:
+    {
+      programs.neovim = {
+        enable = true;
+        vimAlias = true;
+        viAlias = true;
+        defaultEditor = true;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.neovim;
+      };
+    };
 }
 #    programs.neovim = {
 #      enable = true;

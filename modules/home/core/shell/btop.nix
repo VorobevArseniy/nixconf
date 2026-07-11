@@ -13,6 +13,7 @@
       programs.btop = {
         settings = {
           color_theme = "nord";
+          vim_keys = true;
         };
         package = lib.mkForce pkgs.btop-rocm;
       };

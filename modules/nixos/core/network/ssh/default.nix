@@ -6,7 +6,14 @@
       #   sshd
       # ];
 
-      programs.ssh.startAgent = true;
+      programs.ssh = {
+        startAgent = true;
+        enableAskPassword = true;
+      };
+
+      environment.variables = {
+        SSH_ASKPASS_REQUIRE = "prefer";
+      };
 
       # load secrets that are only readable by master
       # secrets = lib.listToAttrs (

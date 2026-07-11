@@ -1,14 +1,11 @@
-{ inputs, ... }:
+{ self, ... }:
 {
-  flake.modules.nixos.desktop =
+  flake.modules.nixos.niri =
     { pkgs, ... }:
     {
-      programs.niri.enable = true;
-      nixpkgs.overlays = [ inputs.niri.overlays.niri ];
-      programs.niri.package = pkgs.niri;
-
-      environment.systemPackages = with pkgs; [
-        alacritty
-      ];
+      programs.niri = {
+        enable = true;
+        package = self.packages.${pkgs.stdenv.hostPlatform.system}.niri;
+      };
     };
 }

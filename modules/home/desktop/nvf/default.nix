@@ -94,9 +94,15 @@
 
               typescript = {
                 enable = true;
-                # extensions = {
-                #   ts-error-translator.enable = true;
-                # };
+                extensions = {
+                  ts-error-translator = {
+                    enable = false;
+                    setupOpts = {
+                      auto_override_publish_diagnostics = false;
+                      auto_attach = true;
+                    };
+                  };
+                };
                 format = {
                   enable = true;
                   type = [ "biome" ];
@@ -146,6 +152,7 @@
             formatter.conform-nvim.enable = true;
 
             mini = {
+              align.enable = true;
               pick.enable = true;
               extra.enable = true;
               # pairs.enable = true;

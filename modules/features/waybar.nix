@@ -1,52 +1,41 @@
+{ inputs, ... }:
 {
-  flake.modules.homeManager.waybar =
+  perSystem =
+    { pkgs, ... }:
     {
-      config,
-      lib,
-      pkgs,
-      ...
-    }:
-    {
-      programs.waybar = {
-        enable = true;
-        systemd.enable = true;
-        settings = [
-          {
-            layer = "top";
-            outputs = [
-              "DP-3"
-            ];
-            height = 25;
-            # margin = "10";
+      packages.waybar = inputs.nix-wrapper-modules.wrappers.waybar.wrap {
+        inherit pkgs;
 
-            modules-left = [
-              "niri/window"
-            ];
+        settings = {
+          layer = "top";
+          outputs = [
+            "DP-3"
+          ];
+          height = 25;
 
-            modules-right = [
-              "wireplumber"
-              "network"
-              "clock"
-              "custom/power"
-            ];
+          modules-left = [
+            "niri/window"
+          ];
 
-            "niri/window" = {
-              format = "{title}";
-              max-length = 35;
-              rewrite = {
-                "" = "nihil";
-              };
+          modules-right = [
+            "wireplumber"
+            "clock"
+          ];
+
+          clock = {
+            format = "{:%d.%m.%y %H:%M}";
+            tooltip = false;
+          };
+
+          "niri/window" = {
+            format = "{title}";
+            max-length = 35;
+            rewrite = {
+              "" = "nihil";
             };
-
-            "custom/power" = {
-              format = "󰤆";
-              tooltip = false;
-              on-click = "fuzzel-powermenu";
-            };
-
-          }
-        ];
-        style = ''
+          };
+        };
+        "style.css".content = ''
           * {
             font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
             font-size: 1rem;

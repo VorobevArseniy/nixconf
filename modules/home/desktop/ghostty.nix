@@ -1,22 +1,26 @@
 {
-  flake.modules.homeManager.ghostty =
-    { lib, ... }:
-    {
-      home.sessionVariables = {
-        TERMINAL = "ghostty";
-      };
+  flake.modules.homeManager.ghostty = {
+    home.sessionVariables = {
+      TERMINAL = "ghostty";
+    };
 
-      programs.ghostty = {
-        enable = true;
+    programs.ghostty = {
+      enable = true;
 
-        settings = {
-          mouse-hide-while-typing = true;
-          confirm-close-surface = false;
-          working-directory = "home";
-          window-inherit-working-directory = false;
+      settings = {
+        mouse-hide-while-typing = true;
+        confirm-close-surface = false;
+        working-directory = "inherit";
 
-          theme = "Nordfox";
-        };
+        theme = "Nordfox";
+
+        # keybindings = {
+        #   "super+shift+h" = "goto_split:left";
+        #   "super+shift+j" = "goto_split:bottom";
+        #   "super+shift+k" = "goto_split:top";
+        #   "super+shift+l" = "goto_split:right";
+        # };
       };
     };
+  };
 }

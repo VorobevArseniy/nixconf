@@ -16,6 +16,7 @@ topLevel: {
       environment.systemPackages = lib.attrValues {
         inherit (pkgs)
           gcc
+          clang
           go
           ;
       };
